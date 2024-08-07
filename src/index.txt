@@ -1,0 +1,684 @@
+:root {
+    /* ******************************************** */
+
+    --greyTextColor: #8F8F8F;
+    --orangeTextColor: #FF914D;
+    --greenTextColor: #008479;
+    --activeTextColor: #34C38F;
+    --deactiveTextColor: #C90303;
+    --blueTextColor: #0085FF;
+    --borderSidebar: #D7E7E5;
+    --darkGreenBorderColor: #00A67E;
+    --greyborderColor: #DDDDEB;
+    --tableGreyBackgroundColor: #F2F3F6;
+    --headingBackgroundColor: #E5F3F2;
+
+    --greyInputborderColor: #E4E7EB;
+    --greyInputTextColor: #ADADBD;
+
+    --modalBorderColor: #DEE2E7;
+
+
+    --redColorBtn: #B50000;
+    --greenColorBtn: #008479;
+    --lightgreyColorBtn: #E4E7EB;
+    --darkgreyColorBtn: #D9D9D9;
+    --cancelBtn: #ECEBF3;
+
+    --orangeHighlightText: #F5B048;
+    --activeOrangeBorder: #FF914C;
+    --greyHeadingBgColor: #E5F3F2;
+    --whiteTextColor: #ffffff;
+    --whiteColor: #ffffff;
+    --breadCrumColor: #78788C;
+    --paragraghColor: #78788C;
+    --headingBlackColor: #000000;
+    --textColor: #000000;
+    --buttonBgColor: #008479;
+    --buttonBorderColor: #ECEBF3;
+    --tableRowBgColor: #F2F3F6;
+    --tableActionButtonBgColor: #D9D9D9;
+  
+    /* ******************************************** */
+
+    --font-size-30: 30px;
+    --font-size-26: 26px;
+    --font-size-20: 20px;
+    --font-size-18: 18px;
+    --font-size-16: 16px;
+    --font-size-15: 15px;
+    --font-size-14: 14px;
+    --font-size-13: 13px;
+    --font-size-12: 12px;
+
+    --fontWeight500: 500;
+
+    /* ******************************************** */
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    font-family: Noto Sans;
+    margin: 0;
+    padding: 0;
+}
+
+/* *********************          Text Font Size     ********************* */
+
+.orangeHighlightText{
+    color: var(--orangeHighlightText);
+}
+
+.font26 {
+    font-size: var(--font-size-26) !important;
+}
+
+h1 {
+    font-size: var(--font-size-30) !important;
+}
+
+h2 {
+    font-size: var(--font-size-15) !important;
+}
+
+h3 {
+    font-size: var(--font-size-14) !important;
+}
+
+span {
+    font-size: var(--font-size-13) !important;
+}
+
+h5 {
+    font-size: var(--font-size-12) !important;
+}
+
+tr{
+    border-color: var(--greyInputborderColor);
+}
+
+.font18{
+    font-size: var(--font-size-18);
+}
+
+.font16{
+    font-size: var(--font-size-16);
+}
+
+.font14{
+    font-size: var(--font-size-15) !important;
+}
+
+.fontweight500{
+    font-weight: var(--fontWeight500) !important;
+}
+
+.borderTOP{
+    border-top: 1px solid var(--borderSidebar);
+}
+
+.borderBottom{
+    border-bottom: 1px solid var(--borderSidebar);
+}
+
+.borderRightt{
+    border-right: 1px solid var(--borderSidebar);
+}
+
+
+/* *********************          Text Font Size     ********************* */
+
+.scrollbarhide::-webkit-scrollbar {
+    display: none;
+}
+
+.schoolNameDetails{
+    background-color: var(--greenColorBtn);
+    border-radius: 0px 100px 100px 0px;
+}
+
+.dottedTopBorder{
+    border-top: 1px dashed #fff;
+}
+
+/* ***********************          Text Colors     *********************** */
+
+.greyText {
+    color: var(--greyTextColor) !important;
+}
+
+.orangeText {
+    color: var(--orangeTextColor) !important;
+}
+
+.greenText {
+    color: var(--greenTextColor) !important;
+}
+
+.activeText {
+    color: var(--activeTextColor) !important;
+}
+
+.deactiveText {
+    color: var(--deactiveTextColor) !important;
+}
+
+.blueText{
+    color: var(--blueTextColor) !important;
+}
+.table-row-bg-color{
+    background: var(--tableRowBgColor) !important;
+  }
+
+
+
+/* ***********************          Text Colors     *********************** */
+
+/* ***********************          border Colors     *********************** */
+
+.cardradius {
+    border-radius: 10px;
+}
+
+.sidebarborder {
+    border-right: 1px solid var(--lightGreenBorderColor)
+}
+
+.sidebarlinkborder {
+    border-bottom: 1px solid var(--lightGreenBorderColor)
+}
+
+.sidebartoplinkborder {
+    border-top: 1px solid var(--lightGreenBorderColor)
+}
+
+.greyborders {
+    border: 1px solid var(--greyborderColor)
+}
+
+.greyTopborders {
+    border-top: 1px solid var(--greyborderColor)
+}
+
+.greyBottomborders {
+    border-bottom: 1px solid var(--greyborderColor)
+}
+
+
+/* ***********************          border Colors     *********************** */
+
+
+
+/* ***********************          Button Colors     *********************** */
+
+.formcontrolsearch{
+    border-radius: 5px 0px 0px 5px;
+}
+
+.searchButtons {
+    background-color: var(--greenColorBtn);
+    border-radius: 0px 5px 5px 0px;
+}
+
+.searchButtons:hover, .searchButtons:focus {
+    background-color: var(--greenColorBtn) !important;
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+
+.viewDetailsButtons {
+    background-color: var(--lightgreyColorBtn);
+    border-radius: 2px;
+    width: 98px;
+    height: 24px;
+}
+
+.viewDetailsButtons:hover, .viewDetailsButtons:focus {
+    background-color: var(--lightgreyColorBtn) !important;
+    border-radius: 2px !important;
+    width: 98px !important;
+    height: 24px !important;
+}
+
+.viewDetailsButtons.show{
+    background-color: var(--lightgreyColorBtn);
+    border: none !important;
+}
+
+
+.addButtons {
+    background-color: var(--greenColorBtn);
+    border-radius: 5px;
+    width: 115px;
+    height: 38px;
+}
+
+.addButtons:hover , .addButtons:focus {
+    background-color: var(--greenColorBtn) !important;
+    border-radius: 5px !important;
+    width: 115px !important;
+    height: 38px !important;
+}
+
+
+.addButtons2 {
+    background-color: var(--greenColorBtn);
+    border-radius: 5px;
+    width: 123px;
+    height: 38px;
+}
+
+.addButtons2:hover , .addButtons2:focus {
+    background-color: var(--greenColorBtn) !important;
+    border-radius: 5px !important;
+    width: 123px !important;
+    height: 38px !important;
+}
+
+
+.submitButtons {
+    background-color: var(--greenColorBtn);
+    border-radius: 5px;
+    width: 79px;
+    height: 38px;
+}
+
+.submitButtons:hover , .submitButtons:focus {
+    background-color: var(--greenColorBtn) !important;
+    border-radius: 5px !important;
+    width: 79px !important;
+    height: 38px !important;
+}
+
+.continueButtons {
+    background-color: var(--greenColorBtn);
+    border-radius: 0px;
+    width: 92px;
+    height: 38px;
+}
+
+.continueButtons:hover, .continueButtons:focus {
+    background-color: var(--greenColorBtn) !important;
+    border-radius: 0px !important;
+    width: 92px !important;
+    height: 38px !important;
+}
+
+.deleteButtons {
+    background-color: var(--redColorBtn);
+    border-radius: 0px;
+    width: 75px;
+    height: 38px;
+}
+
+.deleteButtons:hover,.deleteButtons:focus {
+    background-color: var(--redColorBtn) !important;
+    border-radius: 0px !important;
+    width: 75px !important;
+    height: 38px !important;
+}
+
+.actionButtons {
+    background-color: var(--darkgreyColorBtn);
+    border-radius: 5px;
+    width: 87px;
+    height: 24px;
+    line-height: 12px;
+}
+
+.actionButtons:hover, .actionButtons:focus {
+    background-color: var(--darkgreyColorBtn) !important;
+    border-radius: 5px !important;
+    width: 87px !important;
+    height: 24px !important;
+}
+
+.updateButtons {
+    background-color: var(--greenColorBtn);
+    border-radius: 5px;
+    width: 80px;
+    height: 38px;
+}
+
+.updateButtons:hover, .updateButtons:focus {
+    background-color: var(--greenColorBtn) !important;
+    border-radius: 5px !important;
+    width: 80px !important;
+    height: 38px !important;
+}
+
+.dltcancelButtons {
+    border-color: var(--cancelBtn);
+    border-radius: 0px;
+    width: 71px;
+    height: 38px;
+}
+
+.dltcancelButtons:hover, .dltcancelButtons:focus {
+    border-color: var(--cancelBtn) !important;
+    border-radius: 0px !important;
+    width: 71px !important;
+    height: 38px !important;
+}
+
+.dltcancelButtons:active{
+    border-color: var(--cancelBtn) !important;
+}
+
+
+.cancelButtons {
+    border-color: var(--cancelBtn);
+    border-radius: 5px;
+    width: 71px;
+    height: 38px;
+}
+
+.cancelButtons:hover,.cancelButtons:focus {
+    border-color: var(--cancelBtn) !important;
+    border-radius: 5px !important;
+    width: 71px !important;
+    height: 38px !important;
+}
+
+.cancelButtons:active{
+    border-color: var(--cancelBtn) !important;
+}
+
+
+.confirmButtons {
+    background-color: var(--greenColorBtn);
+    border-radius: 5px;
+    width: 422px;
+    height: 45px;
+}
+
+.confirmButtons:hover, .confirmButtons:focus {
+    background-color: var(--greenColorBtn) !important;
+    border-radius: 5px !important;
+    width: 422px !important;
+    height: 45px !important;
+}
+
+/* ***********************          Button Colors     *********************** */
+
+
+
+/* ***********************          Active Sidebar     *********************** */
+
+
+.actionOptions .itemVisble{
+    color: #fff !important;
+}
+
+.actionOptions {
+    background-color: var(--greenColorBtn);
+    border-right: 5px solid var(--activeOrangeBorder);
+    color: #fff !important;
+    position: relative;
+}
+
+.actionOptions::before {
+    content: "";
+    display: block;
+    width: 0; 
+    height: 0; 
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid var(--activeOrangeBorder);
+    position: absolute;
+    top: 32%;
+    right: -1%;
+}
+
+.actionOptions:hover {
+    background-color: var(--greenColorBtn);
+    border-right: 5px solid var(--activeOrangeBorder);
+    color: #fff !important;
+    position: relative;
+}
+
+.actionOptions::before:hover {
+    content: "";
+    display: block;
+    width: 0; 
+    height: 0; 
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid var(--activeOrangeBorder);
+    position: absolute;
+    top: 32%;
+    right: -1%;
+}
+
+/* *************************   Collapsed Sidebar Active    ******************************* */
+
+.actionOptionsCollapsed {
+    background-color: var(--greenColorBtn);
+    border-right: 4px solid var(--activeOrangeBorder);
+    color: #fff !important;
+    position: relative;
+}
+
+.actionOptionsCollapsed::before {
+    content: "";
+    display: block;
+    width: 0; 
+    height: 0; 
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid var(--activeOrangeBorder);
+    position: absolute;
+    top: 32%;
+    right: -1%;
+}
+
+.actionOptionsCollapsed:hover{
+    background-color: var(--greenColorBtn);
+    border-right: 4px solid var(--activeOrangeBorder);
+    color: #fff !important;
+    position: relative;
+}
+
+.actionOptionsCollapsed::before:hover{
+    content: "";
+    display: block;
+    width: 0; 
+    height: 0; 
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid var(--activeOrangeBorder);
+    position: absolute;
+    top: 32%;   
+    right: -1%;
+}
+
+
+
+/* ***********************          Active Sidebar     *********************** */
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: #f8f9fa;
+}
+
+.scrizalogoImg{
+    height: 53px
+}
+
+.sidebarLogoimg{
+    display: flex;
+    justify-content: center;
+}
+
+
+.actionButtons{
+    background-color: linear-gradient(#4bc0c0, #ffff);
+}
+
+
+
+
+/* ********************************        MEDIA QUERY FOR SIDEBAR       ********************************* */
+
+
+@media screen and (width: 831px){
+    .sidebarContentDiv{
+        width: 168px !important;
+    }
+}
+
+@media screen and (width: 832px){
+    .sidebarContentDiv{
+        width: 169px !important;
+    }
+}
+
+@media screen and (width: 833px){
+    .sidebarContentDiv{
+        width: 170px !important;
+    }
+}
+
+@media screen and (width: 834px){
+    .sidebarContentDiv{
+        width: 171px !important;
+    }
+}
+
+@media screen and (width: 835px){
+    .sidebarContentDiv{
+        width: 172px !important;
+    }
+}
+
+@media screen and (width: 836px){
+    .sidebarContentDiv{
+        width: 173px !important;
+    }
+}
+
+@media screen and (width: 833px){
+    .sidebarContentDiv{
+        width: 170px !important;
+    }
+}
+
+@media screen and (width: 833px){
+    .sidebarContentDiv{
+        width: 170px !important;
+    }
+}
+
+@media screen and (width: 833px){
+    .sidebarContentDiv{
+        width: 170px !important;
+    }
+}
+
+@media screen and (width: 833px){
+    .sidebarContentDiv{
+        width: 170px !important;
+    }
+}
+
+@media screen and (width: 833px){
+    .sidebarContentDiv{
+        width: 170px !important;
+    }
+}
+
+@media screen and (width: 833px){
+    .sidebarContentDiv{
+        width: 170px !important;
+    }
+}
+
+@media screen and (width: 833px){
+    .sidebarContentDiv{
+        width: 170px !important;
+    }
+}
+
+@media screen and (width: 833px){
+    .sidebarContentDiv{
+        width: 170px !important;
+    }
+}
+
+@media screen and (width: 833px){
+    .sidebarContentDiv{
+        width: 170px !important;
+    }
+}
+
+
+/* ********************************        MEDIA QUERY FOR SIDEBAR       ********************************* */
+
+
+
+
+
+
+
+
+
+.heading-16{
+    font-size: var(--font-size-15) !important;
+  }
+  .heading-13{
+    font-size: var(--font-size-13) !important;
+  }
+  .heading-14{
+    font-size: var(--font-size-14) !important;
+  }
+  .breadCrum-color{
+    color: var( --breadCrumColor) !important;
+  }
+  .font-color{
+    color: var(  --paragraghColor) !important;
+  }
+  .breadcrum-li a{
+    text-decoration: none;
+    margin-top: 5px;
+    color: var(  --greenTextColor) !important;
+    }
+  .hading-black-color{
+    color: var(  --headingBlackColor) !important;
+    }
+  .button-bg-color{
+  background: var( --buttonBgColor) !important;
+    }
+  .button-color{
+      color: var(--whiteTextColor) !important;
+    }
+  .text-color-000{
+  color: var(--textColor) !important;
+    }
+  .grey-input-text-color{
+    color: var(  --greyInputTextColor) !important;
+  }
+  .grey-input-text-color::placeholder{
+    color: var(  --greyInputTextColor) !important;
+  }
+  .input-border-color{
+    border-color: var(  --greyInputborderColor) !important;
+  }
+  .grey-border-color{
+    border: 1px solid var(--greyborderColor) !important;
+  }
+  .greyTextColor{
+    color: var(--greyTextColor) !important;
+  }
+  .table-row-bg-color{
+    background: var(--tableRowBgColor) !important;
+  }
+  .tableActionButtonBgColor{
+    background: var(--tableActionButtonBgColor) !important;
+  }
+
+
+

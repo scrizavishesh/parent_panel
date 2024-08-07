@@ -1,0 +1,199 @@
+:root {
+    /* ******************************************** */
+
+    --sidebarBackground: #F0F8F7;
+    --greyTextColor: #8F8F8F;
+    --orangeTextColor: #FF914D;
+    --greenTextColor: #008479;
+    --blueTextColor: #0085FF;
+    --borderSidebar: #D7E7E5;
+    --lightGreenBorderColor: #D7E7E5;
+    --darkGreenBorderColor: #00A67E;
+    --breadCrumTextColor: #78788C;
+    --breadCrumActiveTextColor: #008479;
+    --fontControlBorder: #E4E7EB;
+    --OrangeBtnColor: #FF914D;
+    --headingBackgroundColor: #E5F3F2;
+    --BtnBorder: #ECEBF3;
+    --verifiedButton: #0AAD24;
+    --tableGreyBackgroundColor: #F2F3F6;
+    --ongoingEventBtn: #41AD49;
+    --upcomingEventBtn: #4F3EE0;
+    --closedEventBtn: #B50000;
+    --viewBtn: #D9D9D9;
+    --hoverBtn: #f4f4f4;
+    --cardsBorder: #E5E5F0;
+    --cancelBtn: #ededed;
+    --darkgreyColorBtn: #D9D9D9;
+
+    --hoveringDivBg: #252525;
+    --hoveringDivBorder : #034F95;
+    --activeOrangeBorder: #FF914C;
+
+    --timeTableCardBg: #F9FAFF;
+    --timeTableCardBorder: #F1F1F9;
+    --greyState: #ADADBD;
+    /* ******************************************** */
+
+    --font12: 12px;
+    --font14: 14px;
+    --font16: 16px;
+    --font18: 18px;
+
+
+    --borderRadius5px: 5px;
+    --borderRadius10px: 10px;
+    --borderRadius17px: 17px;
+    --borderRadius25px: 25px;
+
+
+    /* ******************************************** */
+}
+
+body,
+h1,
+h2,
+h3,h4,h5
+p,
+ul,
+li, span {
+    font-family: Noto Sans !important;
+}
+
+p{
+    margin: 0%;
+}
+
+.font12{
+    font-size: var(--font12);
+}
+
+.font14{
+    font-size: var(--font14);
+}
+
+.font16{
+    font-size: var(--font16);
+}
+
+.font18{
+    font-size: var(--font18);
+}
+
+.borderRadius5{
+    border-radius: var(--borderRadius5px) !important;
+}
+
+.saveButtons,
+.saveButtons:hover,
+.saveButtons:focus {
+    background-color: var(--greenTextColor) !important;
+    border: none !important ;
+    border-radius: 5px;
+    width: 70px;
+    height: 38px;
+}
+
+.addButtons,
+.addButtons:hover,
+.addButtons:focus {
+    background-color: var(--greenTextColor) !important;
+    border: none !important ;
+    border-radius: 5px;
+    width: 135px;
+    height: 38px;
+}
+
+.searchButtons,
+.searchButtons:hover,
+.searchButtons:focus {
+    background-color: var(--greenTextColor) !important;
+    border: none !important ;
+    border-radius: 5px;
+    width: 90px;
+    height: 38px;
+}
+
+.cancelButtons,
+.cancelButtons:hover,
+.cancelButtons:active,
+.cancelButtons:focus {
+    border: 1px solid var(--cancelBtn) !important;
+    border-radius: 5px;
+    width: 71px;
+    height: 36px;
+}
+
+.actionButtons,
+.actionButtons:hover,
+.actionButtons:active,
+.actionButtons:focus {
+    background-color: var(--darkgreyColorBtn) !important;
+    border: none !important ;
+    border-radius: 5px;
+    width: 72px;
+    height: 24px;
+    line-height: 12px;
+}
+
+.formcontrolsearch {
+    border-radius: 5px 0px 0px 5px !important;
+    border: 1.5px solid var(--fontControlBorder);
+}
+
+.searchhhButtons {
+    border-radius: 0px 5px 5px 0px !important;
+    background-color: var(--greenTextColor) !important;
+    border: none !important ;
+    width: 90px;
+    height: 38px;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-bg-type: var(--tableGreyBackgroundColor);
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+/* Pagination */
+
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination li a {
+    box-shadow: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    font-size: var(--font-size-14);
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #000;
+    /* background-color: #f5f5f5;
+    transition: background-color 0.3s; */
+}
+
+.pagination li a:hover {
+    background-color: #317a77 !important;
+    color: #fff !important;
+}
+
+.pagination li.active a {
+    background-color: #317a77 !important;
+    color: #fff;
+    font-weight: bold;
+}
+
+
