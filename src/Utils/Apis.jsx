@@ -4,7 +4,7 @@ const forgetTooken = `Bearer ${localStorage.getItem('forgteToken')}`;
 // const token = localStorage.getItem('token');
 
 const LocalGirjeshIP= 'http://10.5.51.4:5000';
-const Domain= 'http://auth.edu2all.in:5000';
+const Domain= 'https://www.auth.edu2all.in';
 
 // ******************************************************************************************************
                             // Login  //
