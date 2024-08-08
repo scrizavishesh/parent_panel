@@ -114,7 +114,7 @@ const DashboardPage = () => {
         }
         else {
           setloaderState(false);
-          toast.error(response?.data?.message);
+          // toast.error(response?.data?.message);
         }
       }
       else {
@@ -131,7 +131,6 @@ const DashboardPage = () => {
     try {
       setloaderState(true);
       var response = await getAllAssignmentsDataApi();
-      console.log(response, 'Assignment')
       if (response?.status === 200) {
         if (response?.data?.status === 'success') {
           setloaderState(false);
@@ -160,7 +159,6 @@ const DashboardPage = () => {
       const pageNo = ''
       const pageSize = ''
       var response = await getAllNoticeDataApi(searchByKey, pageNo, pageSize);
-      console.log(response, 'notice')
       if (response?.status === 200) {
         if (response?.data?.status === 'success') {
           setloaderState(false);
@@ -189,7 +187,6 @@ const DashboardPage = () => {
       const pageNo = ''
       const pageSize = ''
       var response = await getAllHolidayDataApi(searchByKey, pageNo, pageSize);
-      console.log(response, 'holiday')
       if (response?.status === 200) {
         if (response?.data?.status === 'success') {
           setloaderState(false);
@@ -218,7 +215,6 @@ const DashboardPage = () => {
       const pageNo = ''
       const pageSize = ''
       var response = await getAllEventDataApi(searchByKey, pageNo, pageSize);
-      console.log(response, 'Events')
       if (response?.status === 200) {
         if (response?.data?.status === 'success') {
           setloaderState(false);
@@ -249,7 +245,7 @@ const DashboardPage = () => {
         )
       }
       <div className="row">
-        <div className="col-6 ps-3 pe-3 pt-3">
+        <div className="col-md-6 col-12 ps-3 pe-3 pt-3">
           <div className="row cards p-2 h-100">
             <div className="col-12">
               <div className="row">
@@ -315,7 +311,7 @@ const DashboardPage = () => {
             </div>
           </div>
         </div>
-        <div className="col-6 ps-3 pe-3 pt-3">
+        <div className="col-md-6 col-12 ps-3 pe-3 pt-3">
           <div className="row cards p-2 h-100">
             <div className="col-12">
               <div className="row">
@@ -329,7 +325,7 @@ const DashboardPage = () => {
         </div>
       </div>
       <div className="row">
-        <div className="col-6 ps-3 pe-3 pt-3">
+        <div className="col-md-6 col-12 ps-3 pe-3 pt-3">
           <div className="row cards p-2 h-100">
             <div className="col-12">
               <div className="row">
@@ -378,7 +374,7 @@ const DashboardPage = () => {
             </div>
           </div>
         </div>
-        <div className="col-6 ps-3 pe-3 pt-3">
+        <div className="col-md-6 col-12 ps-3 pe-3 pt-3">
           <div className="row cards p-2 h-100">
             <div className="col-12">
               <div className="row">
@@ -418,7 +414,7 @@ const DashboardPage = () => {
         </div>
       </div>
       <div className="row">
-        <div className="col-6 ps-3 pe-3 pt-3">
+        <div className="col-md-6 col-12 ps-3 pe-3 pt-3">
           <div className="row cards p-2 h-100">
             <div className="col-12">
               <div className="row">
@@ -450,7 +446,7 @@ const DashboardPage = () => {
             </div>
           </div>
         </div>
-        <div className="col-6 ps-3 pe-3 pt-3">
+        <div className="col-md-6 col-12 ps-3 pe-3 pt-3">
           <div className="row cards p-2 h-100">
             <div className="col-12">
               <div className="row">

@@ -75,7 +75,7 @@ const Teacher = () => {
 
     useEffect(() => {
         getAllTeachers();
-    }, []);
+    }, [pageNo]);
 
     const getAllTeachers = async () => {
         try {

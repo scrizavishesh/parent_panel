@@ -172,6 +172,9 @@ const Sidebar = () => {
     const token = localStorage.getItem('token');
     const { sidebaropen, toggleSidebar } = useSidebarContext();
 
+    const [ExaminationDropOpen, setExaminationDropOpen] = useState(false);
+
+
     const location = useLocation();
 
     const [activeLink, setActiveLink] = useState(() => {
@@ -191,28 +194,41 @@ const Sidebar = () => {
         localStorage.setItem('activeLink', link);
     };
 
-    useEffect(()=>{
-    },[token])
+    useEffect(() => {
+    }, [token])
 
-    const handleLogout = async() =>{
-        try{
+    const handleLogout = async () => {
+        try {
             var response = await logoutApi();
             console.log(response)
-            if(response?.status===200){
-                if(response?.data?.status==='success'){
+            if (response?.status === 200) {
+                if (response?.data?.status === 'success') {
                     localStorage.removeItem('token')
                     navigate('/')
-                    window.location.reload(); 
+                    window.location.reload();
                 }
             }
-            else{
+            else {
                 console.log(response?.data?.msg);
             }
         }
-        catch{
+        catch {
 
         }
     }
+
+    const handleActiveDropAndLink = (val) => {
+        handleActiveLink(val)
+        setExaminationDropOpen(!ExaminationDropOpen)
+    }
+
+    const handleActiveWithOutLink = (val) => {
+        handleActiveLink(val)
+        setExaminationDropOpen(false)
+    }
+
+
+
 
     return (
         <Container sidebaropen={sidebaropen}>
@@ -227,23 +243,28 @@ const Sidebar = () => {
                 <div className="row p-0">
                     <ul className='p-0'>
                         <li>
-                            <Link to="/" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'dashboard' ? 'active' : ''}`} onClick={() => handleActiveLink('dashboard')} >
+                            <Link to="/" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'dashboard' ? 'active' : ''}`} onClick={() => handleActiveWithOutLink('dashboard')} >
                                 <Icon icon="clarity:dashboard-line" width="1.5em" height="1.5em" />
                                 <p className="ms-2 menu-text font14">Dashboard</p>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/Fees" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'Fees' ? 'active' : ''}`} onClick={() => handleActiveLink('Fees')} >
+                            <Link to="/Fees" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'Fees' ? 'active' : ''}`} onClick={() => handleActiveWithOutLink('Fees')} >
                                 <Icon icon="ph:graduation-cap" width="1.5em" height="1.5em" />
                                 <p className="ms-2 menu-text font14">Fees</p>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/examCategory" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'offlineExam' || activeLink === 'marks' || activeLink === 'grades' ? 'active' : ''}`} data-bs-toggle="collapse" data-bs-target="#collapseExamination" onClick={() => handleActiveLink('examCategory')} >
-                                <Icon icon="icon-park-outline:id-card-v" width="1.5em" height="1.5em" />
-                                <p className="ms-2 menu-text font14">Examination</p>
+                            <Link to="/examCategory" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'offlineExam' || activeLink === 'marks' || activeLink === 'grades' ? 'active' : ''}`} data-bs-toggle="collapse" data-bs-target="#collapseExamination" onClick={() => handleActiveDropAndLink('offlineExam')} >
+                                <div className="flex-grow-1">
+                                    <Icon icon="icon-park-outline:id-card-v" width="1.5em" height="1.5em" />
+                                    <p className="ms-2 menu-text font14">Examination</p>
+                                </div>
+                                <div className="">
+                                    {ExaminationDropOpen ? <Icon icon="ri:arrow-up-s-fill" width="1.5em" height="1.5em" /> : <Icon icon="ri:arrow-down-s-fill" width="1.5em" height="1.5em" />}
+                                </div>
                             </Link>
-                            <div id="collapseExamination" className="collapse collapse-menu ps-0">
+                            <div id="collapseExamination" className={`collapse collapse-menu p-0 ${ExaminationDropOpen ? 'show' : 'hide'}`}>
                                 <ul className='dashed ps-3'>
                                     <li>
                                         <Link to="/offlineExam" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'offlineExam' ? 'active' : ''}`} onClick={() => handleActiveLink('offlineExam')} >
@@ -267,55 +288,55 @@ const Sidebar = () => {
                             </div>
                         </li>
                         <li>
-                            <Link to="/teacher" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'teacher' ? 'active' : ''}`} onClick={() => handleActiveLink('teacher')} >
-                                <Icon icon="mdi:teacher" width="1.5em" height="1.5em"/>
+                            <Link to="/teacher" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'teacher' ? 'active' : ''}`} onClick={() => handleActiveWithOutLink('teacher')} >
+                                <Icon icon="mdi:teacher" width="1.5em" height="1.5em" />
                                 <p className="ms-2 menu-text font14">Teacher</p>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/Assignments" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'Assignments' ? 'active' : ''}`} onClick={() => handleActiveLink('Assignments')} >
+                            <Link to="/Assignments" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'Assignments' ? 'active' : ''}`} onClick={() => handleActiveWithOutLink('Assignments')} >
                                 <Icon icon="el:list-alt" width="1.5em" height="1.5em" />
                                 <p className="ms-2 menu-text font14">Assignments</p>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/OnlineCourse" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'OnlineCourse' ? 'active' : ''}`} onClick={() => handleActiveLink('OnlineCourse')} >
+                            <Link to="/OnlineCourse" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'OnlineCourse' ? 'active' : ''}`} onClick={() => handleActiveWithOutLink('OnlineCourse')} >
                                 <Icon icon="clarity:dashboard-line" width="1.5em" height="1.5em" />
                                 <p className="ms-2 menu-text font14">Online Course</p>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/SamplePaper" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'Sample Paper' ? 'active' : ''}`} onClick={() => handleActiveLink('Sample Paper')} >
+                            <Link to="/SamplePaper" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'Sample Paper' ? 'active' : ''}`} onClick={() => handleActiveWithOutLink('Sample Paper')} >
                                 <Icon icon="fluent:document-bullet-list-24-regular" width="1.5em" height="1.5em" />
                                 <p className="ms-2 menu-text font14">Sample Paper</p>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/Holiday" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'Holiday' ? 'active' : ''}`} onClick={() => handleActiveLink('Holiday')} >
+                            <Link to="/Holiday" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'Holiday' ? 'active' : ''}`} onClick={() => handleActiveWithOutLink('Holiday')} >
                                 <Icon icon="clarity:dashboard-line" width="1.5em" height="1.5em" />
                                 <p className="ms-2 menu-text font14">Holiday</p>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/Notice" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'Notice' ? 'active' : ''}`} onClick={() => handleActiveLink('Notice')} >
+                            <Link to="/Notice" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'Notice' ? 'active' : ''}`} onClick={() => handleActiveWithOutLink('Notice')} >
                                 <Icon icon="bx:bell" width="1.5em" height="1.5em" />
                                 <p className="ms-2 menu-text font14">Notice</p>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/Event" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'Event' ? 'active' : ''}`} onClick={() => handleActiveLink('Event')} >
+                            <Link to="/Event" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'Event' ? 'active' : ''}`} onClick={() => handleActiveWithOutLink('Event')} >
                                 <Icon icon="ic:round-event" width="1.5em" height="1.5em" />
                                 <p className="ms-2 menu-text font14">Event</p>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/Profile" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'Profile' ? 'active' : ''}`} onClick={() => handleActiveLink('Profile')} >
+                            <Link to="/Profile" className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'Profile' ? 'active' : ''}`} onClick={() => handleActiveWithOutLink('Profile')} >
                                 <Icon icon="majesticons:user-box-line" width="1.5em" height="1.5em" />
                                 <p className="ms-2 menu-text font14">Profile</p>
                             </Link>
                         </li>
                         <li>
-                            <Link className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'logout' ? 'active' : ''}`} onClick={() => handleActiveLink('logout')} data-bs-toggle="offcanvas" data-bs-target="#logoutCanvas" aria-controls="logoutCanvas" >
+                            <Link className={`menus p-2 d-flex borderBottom ${sidebaropen === '' ? 'justify-content-center' : ''} ${activeLink === 'logout' ? 'active' : ''}`} onClick={() => handleActiveWithOutLink('logout')} data-bs-toggle="offcanvas" data-bs-target="#logoutCanvas" aria-controls="logoutCanvas" >
                                 <Icon icon="material-symbols:logout" width="1.5em" height="1.5em" />
                                 <p className="ms-2 menu-text font14">Logout</p>
                             </Link>
